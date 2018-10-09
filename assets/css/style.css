@@ -1,0 +1,55 @@
+body {
+    background-image: url("../images/grass.png");
+}
+
+h1 {
+    text-align: center;
+}
+
+.game {
+    background-color: white;
+    width: 80%;
+    padding: 10px;
+    margin: auto;
+    border-radius: 15px;
+}
+
+#question {
+    font-size: 1.3em;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#answers {
+    width: 90%;
+    margin: auto;
+}
+
+#timer {
+    text-align: center;
+}
+
+#button-holder {
+    align-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    color: white;
+    background-color: #009933;
+    border: none;
+    display: block;
+    font-size: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+img {
+    display: block;
+    margin: auto;
+}

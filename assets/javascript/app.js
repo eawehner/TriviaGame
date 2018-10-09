@@ -80,6 +80,7 @@ function timeDown() {
 
     $("#timer").html("<h2>" + timeNumber + "</h2>");
 
+    // IF TIMER REACHES ZERO, DISPLAY A TIME OUT PAGE AND THE CORRECT ANSWER
     if (timeNumber === 0) {
         $("#timer").html("<h2> TIME'S UP </h2>")
         $("#question").text("You better pay attention!");
@@ -100,7 +101,7 @@ function timer() {
 };
 
 function resetTimer() {
-    timeNumber = 50;
+    timeNumber = 51;
     timer();
 };
 
@@ -112,10 +113,10 @@ function displayQA() {
     if (QA < questions.length) {
         var currentQuestion = questions[QA].question;
 
-        var answerA = "<input type='radio' name='answers' value='a'>" + questions[QA].answers.a + "</input> <br>";
-        var answerB = "<input type='radio' name='answers' value='b'>" + questions[QA].answers.b + "</input> <br>";
-        var answerC = "<input type='radio' name='answers' value='c'>" + questions[QA].answers.c + "</input> <br>";
-        var answerD = "<input type='radio' name='answers' value='d'>" + questions[QA].answers.d + "</input>";
+        var answerA = "<input type='radio' name='answers' value='a' class='radio-answer'>" + questions[QA].answers.a + "</input> <br>";
+        var answerB = "<input type='radio' name='answers' value='b' class='radio-answer'>" + questions[QA].answers.b + "</input> <br>";
+        var answerC = "<input type='radio' name='answers' value='c' class='radio-answer'>" + questions[QA].answers.c + "</input> <br>";
+        var answerD = "<input type='radio' name='answers' value='d' class='radio-answer'>" + questions[QA].answers.d + "</input>";
 
         // SELECT THE QUESTION AND DISPLAY IT...
         $("#question").text(currentQuestion);
@@ -150,12 +151,6 @@ function displayQA() {
     };
 
 };
-
-
-// IF TIMER REACHES ZERO, DISPLAY A TIME OUT PAGE AND THE CORRECT ANSWER
-
-
-
 
 // START THE QUIZ ONCE THE PLAYER HITS THE START BUTTON
 
