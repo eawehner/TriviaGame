@@ -34,6 +34,18 @@ var questions = [
     },
 
     {
+
+        question: "Where does Blathers the Owl work?",
+        answers: {
+            a: "The coffee shop",
+            b: "The retail store",
+            c: "The museum",
+            d: "The beach"
+        },
+        correct: "c"
+    },
+
+    {
         question: "What is the name of the seagull sailor you find washed up on the beach?",
         answers: {
             a: "Gulliver",
@@ -89,20 +101,21 @@ function timeDown() {
 
         setTimeout(function() {
             stop();
-            clearInterval(intervalID);
             displayQA();
             resetTimer();
+            timer();
         },6000);
     };
 };
 
 function timer() {
+    clearInterval(intervalID);
     intervalID = setInterval(timeDown, 1000);
 };
 
 function resetTimer() {
     timeNumber = 51;
-    timer();
+    clearInterval(intervalID);
 };
 
 // FUNCTION FOR DISPLAYING QUESTIONS AND ANSWERS
@@ -140,14 +153,12 @@ function displayQA() {
         // AFTER LAST QUESTION, CHECK AND DISPLAY TOTAL CORRECT ANSWERS
         $("#question").text("YOU DID IT! You completed the Animal Crossing Quiz!");
 
-        $("#answers").text("You got " + correctAnswers + " questions right out of " + questions.length + "! Go you!");
+        $("#answers").html("<center> You got " + correctAnswers + " questions right out of " + questions.length + "! Go you! </center>");
         $("#answers").append("<br> <img src='assets/images/Bobsing.gif' id='bobsing'>");
 
         $("#timer").empty();
 
         stop();
-
-        clearInterval(intervalID);
     };
 
 };
@@ -182,9 +193,9 @@ $("body").on("click", ".enter", function() {
 
         setTimeout(function() {
             stop();
-            clearInterval(intervalID);
             displayQA();
             resetTimer();
+            timer();
         },6000);
 
     } else {
@@ -196,9 +207,9 @@ $("body").on("click", ".enter", function() {
 
         setTimeout(function() {
             stop();
-            clearInterval(intervalID);
             displayQA();
             resetTimer();
+            timer();
         },6000);
     };
 });
