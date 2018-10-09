@@ -82,12 +82,13 @@ function timeDown() {
 
     if (timeNumber === 0) {
         $("#timer").html("<h2> TIME'S UP </h2>")
-        $("#questions").text("You better pay attention!");
-        $("#answers").html("<img src='assets/images/Bobsing.gif' id='bobsing'>");
+        $("#question").text("You better pay attention!");
+        $("#answers").html("<img src='assets/images/Bobtime.gif' id='bobtime'>");
         stop();
 
         setTimeout(function() {
             stop();
+            clearInterval(intervalID);
             displayQA();
             resetTimer();
         },6000);
@@ -136,14 +137,16 @@ function displayQA() {
     } else {
 
         // AFTER LAST QUESTION, CHECK AND DISPLAY TOTAL CORRECT ANSWERS
-        $("#question").text("YOU DID IT!");
+        $("#question").text("YOU DID IT! You completed the Animal Crossing Quiz!");
 
         $("#answers").text("You got " + correctAnswers + " questions right out of " + questions.length + "! Go you!");
-        $("#answers").append("<img src='assets/images/Bobsing.gif' id='bobsing'>");
+        $("#answers").append("<br> <img src='assets/images/Bobsing.gif' id='bobsing'>");
 
         $("#timer").empty();
 
         stop();
+
+        clearInterval(intervalID);
     };
 
 };
@@ -184,6 +187,7 @@ $("body").on("click", ".enter", function() {
 
         setTimeout(function() {
             stop();
+            clearInterval(intervalID);
             displayQA();
             resetTimer();
         },6000);
@@ -197,6 +201,7 @@ $("body").on("click", ".enter", function() {
 
         setTimeout(function() {
             stop();
+            clearInterval(intervalID);
             displayQA();
             resetTimer();
         },6000);
