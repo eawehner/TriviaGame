@@ -14,6 +14,8 @@ Can *you* complete the quiz and finally graduate from Animal Crossing High?
 
 ![AnimalCrossingFinish](assets/images/readme_finish.png)
 
+[Test Your Knowledge Now](https://eawehner.github.io/TriviaGame/)
+
 
 ### Technologies
 - HTML
