@@ -158,14 +158,22 @@ function displayQA() {
 
         $("#timer").empty();
 
+        var tryAgain = $("<button>");
+        tryAgain.addClass("restart");
+        tryAgain.attr("name", "restart");
+        tryAgain.text("Try Again!");
+
+        $("#button-holder").append(tryAgain);
+
         stop();
+
     };
 
 };
 
 // START THE QUIZ ONCE THE PLAYER HITS THE START BUTTON
 
-$("#start").on("click", function() {
+$("body").on("click", ".start", function() {
 
     timer(timeNumber);
     displayQA(QA, questions);
@@ -191,12 +199,19 @@ $("body").on("click", ".enter", function() {
         $("#button-holder").empty();
         correctAnswers++;
 
-        setTimeout(function() {
-            stop();
-            displayQA();
-            resetTimer();
-            timer();
-        },6000);
+        if (QA < questions.length) {
+            setTimeout(function() {
+                stop();
+                displayQA();
+                resetTimer();
+                timer();
+            },6000);
+        } else {
+            setTimeout(function() {
+                stop();
+                displayQA();
+            },6000);
+        }
 
     } else {
 
@@ -205,13 +220,32 @@ $("body").on("click", ".enter", function() {
         $("#answers").html("<img src='assets/images/Bobcry.gif' id='bobcry'>");
         $("#button-holder").empty();
 
-        setTimeout(function() {
-            stop();
-            displayQA();
-            resetTimer();
-            timer();
-        },6000);
+        if (QA < questions.length) {
+            setTimeout(function() {
+                stop();
+                displayQA();
+                resetTimer();
+                timer();
+            },6000);
+        } else {
+            setTimeout(function() {
+                stop();
+                displayQA();
+            },6000);
+        }
     };
+});
+
+//TO RESTART THE GAME
+
+$("body").on("click", ".restart", function() {
+    playerAnswers = [];
+    timeNumber = 50;
+    QA = 0;
+    correctAnswers = 0;
+
+    timer(timeNumber);
+    displayQA(QA, questions);
 });
 
 });

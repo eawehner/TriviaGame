@@ -3,7 +3,14 @@ body {
 }
 
 h1 {
+    font-family: 'Sniglet', cursive;
     text-align: center;
+    color: #ffc836;
+    font-size: 3em;
+    -webkit-text-fill-color: #ffc836;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #98702a;
+    text-shadow: 2px 2px 4px #98702a;
 }
 
 .game {
@@ -28,6 +35,7 @@ h1 {
 }
 
 #timer {
+    font-family: 'Sniglet', cursive;
     text-align: center;
 }
 
